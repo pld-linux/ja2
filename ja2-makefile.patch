@@ -1,0 +1,33 @@
+--- ja2-0.5/Makefile~	2007-07-29 01:02:02.000000000 +0200
++++ ja2-0.5/Makefile	2007-07-29 01:01:51.000000000 +0200
+@@ -46,6 +46,8 @@
+ CFLAGS += -DJA2
+ #CFLAGS += -D_DEBUG
+ 
++LIBS =
++
+ 
+ ifdef WITH_FIXMES
+ CFLAGS += -DWITH_FIXMES
+@@ -438,7 +440,7 @@
+ 
+ $(BINARY): $(OBJS)
+ 	@echo '===> LD $@'
+-	$(Q)$(CXX) $(CFLAGS) $(OBJS) $(LDFLAGS) -o $@
++	$(Q)$(CXX) $(CFLAGS) $(OBJS) $(LDFLAGS) -o $@ $(LIBS)
+ 
+ .c.o:
+ 	@echo '===> CC $<'
+@@ -462,9 +464,9 @@
+ 
+ install: $(BINARY)
+ 	@echo '===> INSTALL'
+-	$(Q)$(INSTALL) -d $(PREFIX)/bin $(MANPREFIX)/man/man6
+-	$(Q)$(INSTALL_PROGRAM) $(BINARY) $(PREFIX)/bin
+-	$(Q)$(INSTALL_MAN) ja2.6 $(MANPREFIX)/man/man6
++	$(Q)$(INSTALL) -d $(DESTDIR)$(PREFIX)/bin $(DESTDIR)$(MANPREFIX)/man/man6
++	$(Q)$(INSTALL_PROGRAM) $(BINARY) $(DESTDIR)$(PREFIX)/bin
++	$(Q)$(INSTALL_MAN) ja2.6 $(DESTDIR)$(MANPREFIX)/man/man6
+ 
+ 
+ lowercase:
