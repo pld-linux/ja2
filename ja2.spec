@@ -16,10 +16,17 @@ BuildRequires:	zlib
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-Jagged Alliance 2 port using SDL.
+Jagged Alliance 2 is a turn based strategy game in which you hire
+mercs to free the country of Arulco. Over 150 different characters, a
+nonlinear gameplay, deep strategic battles and more-than-average
+detailed equipment do their best, to keep you playing on and on.
 
 %description -l pl.UTF-8
-Port gry Jagged Alliance 2 używający SDL.
+Jagged Alliance 2 to turowa gra strategiczna, w której gracz
+wynajmuje najemników aby wyswobodzić kraj Arulco. Ponad 150
+rozmaitych postaci, nieliniowa rozgrywka, rozbudowane taktycznie bitwy
+oraz bardzo szczegółowo opisany ekwipunek sprawiają, że chce się
+grać cały czas.
 
 %prep
 %setup -q
