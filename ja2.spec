@@ -4,7 +4,7 @@ Name:		ja2
 Version:	0.5
 Release:	0.1
 License:	SFI
-Group:		Applications
+Group:		Applications/Games
 Source0:	http://ja2.dragonriders.de/files/%{name}-%{version}-source.tar.bz2
 # Source0-md5:	22003ee20037cdd24a900c978280bd38
 Patch0:		%{name}-makefile.patch
@@ -12,7 +12,7 @@ Patch1:		%{name}-config.patch
 URL:		http://ja2.dragonriders.de/
 BuildRequires:	SDL-devel >= 1.2.0
 BuildRequires:	sed >= 4.0
-BuildRequires:	zlib
+BuildRequires:	zlib-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -35,6 +35,7 @@ grać cały czas.
 %{__sed} -i 's@#CFLAGS += -g@CFLAGS += %{rpmcflags}@' config.template
 
 mv config.template config.default
+
 %build
 %{__make} \
 	CC="%{__cc}" \
