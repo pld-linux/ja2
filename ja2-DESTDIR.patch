@@ -1,0 +1,19 @@
+--- ja2-0.6/Makefile	2007-09-10 15:51:43.000000000 +0000
++++ ja2-0.6/Makefile	2007-08-07 17:02:42.000000000 +0000
+@@ -471,11 +471,11 @@
+ 
+ install: $(BINARY)
+ 	@echo '===> INSTALL'
+-	$(Q)$(INSTALL) -d $(PREFIX)/bin $(MANPREFIX)/man/man6 $(PREFIX)/share/applications $(PREFIX)/share/pixmaps
+-	$(Q)$(INSTALL_PROGRAM) $(BINARY) $(PREFIX)/bin
+-	$(Q)$(INSTALL_MAN) ja2.6 $(MANPREFIX)/man/man6
+-	$(Q)$(INSTALL_DATA) ja2-stracciatella.desktop $(PREFIX)/share/applications
+-	$(Q)$(INSTALL_DATA) Build/Res/jagged3.ico $(PREFIX)/share/pixmaps/jagged2.ico
++	$(Q)$(INSTALL) -d $(DESTDIR)$(PREFIX)/bin $(DESTDIR)$(MANPREFIX)/man/man6 $(DESTDIR)$(PREFIX)/share/applications $(DESTDIR)$(PREFIX)/share/pixmaps
++	$(Q)$(INSTALL_PROGRAM) $(BINARY) $(DESTDIR)$(PREFIX)/bin
++	$(Q)$(INSTALL_MAN) ja2.6 $(DESTDIR)$(MANPREFIX)/man/man6
++	$(Q)$(INSTALL_DATA) ja2-stracciatella.desktop $(DESTDIR)$(PREFIX)/share/applications
++	$(Q)$(INSTALL_DATA) Build/Res/jagged3.ico $(DESTDIR)$(PREFIX)/share/pixmaps/jagged2.ico
+ 
+ 
+ lowercase:
