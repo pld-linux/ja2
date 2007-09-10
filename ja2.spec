@@ -1,14 +1,14 @@
 Summary:	Jagged Alliance 2 port
 Summary(pl.UTF-8):	Port gry Jagged Alliance 2
 Name:		ja2
-Version:	0.5
+Version:	0.6
 Release:	0.1
 License:	SFI
 Group:		Applications/Games
 Source0:	http://ja2.dragonriders.de/files/%{name}-%{version}-source.tar.bz2
-# Source0-md5:	22003ee20037cdd24a900c978280bd38
-Patch0:		%{name}-makefile.patch
-Patch1:		%{name}-config.patch
+# Source0-md5:	b7adb0fd016e4d467657127d4134089d
+Patch0:		%{name}-config.patch
+Patch1:		%{name}-DESTDIR.patch
 URL:		http://ja2.dragonriders.de/
 BuildRequires:	SDL-devel >= 1.2.0
 BuildRequires:	sed >= 4.0
@@ -56,3 +56,5 @@ rm -rf $RPM_BUILD_ROOT
 %doc Changelog TODO *.txt
 %attr(755,root,root) %{_bindir}/%{name}
 %{_mandir}/man6/*.6*
+%{_desktopdir}/ja2-stracciatella.desktop
+%{_pixmapsdir}/jagged2.ico
