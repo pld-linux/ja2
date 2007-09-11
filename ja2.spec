@@ -2,7 +2,7 @@ Summary:	Jagged Alliance 2 port
 Summary(pl.UTF-8):	Port gry Jagged Alliance 2
 Name:		ja2
 Version:	0.6
-Release:	0.1
+Release:	1
 License:	SFI
 Group:		Applications/Games
 Source0:	http://ja2.dragonriders.de/files/%{name}-%{version}-source.tar.bz2
