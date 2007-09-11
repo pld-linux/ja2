@@ -7,8 +7,10 @@ License:	SFI
 Group:		Applications/Games
 Source0:	http://ja2.dragonriders.de/files/%{name}-%{version}-source.tar.bz2
 # Source0-md5:	b7adb0fd016e4d467657127d4134089d
+Source1:	%{name}.png
 Patch0:		%{name}-config.patch
 Patch1:		%{name}-DESTDIR.patch
+Patch2:		%{name}-desktop.patch
 URL:		http://ja2.dragonriders.de/
 BuildRequires:	SDL-devel >= 1.2.0
 BuildRequires:	sed >= 4.0
@@ -32,6 +34,7 @@ grać cały czas.
 %setup -q
 %patch0 -p1
 %patch1 -p1
+%patch2 -p1
 %{__sed} -i 's@#CFLAGS += -g@CFLAGS += %{rpmcflags}@' config.template
 
 mv config.template config.default
@@ -48,6 +51,8 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
+install %{SOURCE1} $RPM_BUILD_ROOT%{_pixmapsdir}
+
 %clean
 rm -rf $RPM_BUILD_ROOT
 
@@ -57,4 +62,4 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/%{name}
 %{_mandir}/man6/*.6*
 %{_desktopdir}/ja2-stracciatella.desktop
-%{_pixmapsdir}/jagged2.ico
+%{_pixmapsdir}/%{name}.png
