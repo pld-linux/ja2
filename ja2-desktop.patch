@@ -1,0 +1,20 @@
+--- ja2-0.6/ja2-stracciatella.desktop~	2007-09-11 21:05:25.693348800 +0200
++++ ja2-0.6/ja2-stracciatella.desktop	2007-09-11 21:05:15.752637357 +0200
+@@ -1,10 +1,14 @@
+ [Desktop Entry]
+ Name=Jagged Alliance 2 - Stracciatella
+-GenericName=Strategy/RP Game
++GenericName=Strategy/RPG Game
++GenericName[pl]=Gra strategiczna z elementami RPG
+ Comment=An enhanced port of Jagged Alliance 2 to SDL
++Comment[pl]=Ulepszony port gry Jagged Alliance 2
+ Exec=ja2
+ TryExec=ja2
+-Icon=jagged2.ico
++Icon=ja2.png
+ Type=Application
+-Categories=Game;StrategyGame;RolePlaying;
++Categories=Game;RolePlaying;
+ Version=1.0
++Terminal=false
++# vi: encoding=utf-8
