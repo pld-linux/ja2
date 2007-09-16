@@ -14,7 +14,7 @@
 +Icon=ja2.png
  Type=Application
 -Categories=Game;StrategyGame;RolePlaying;
-+Categories=Game;RolePlaying;
++Categories=Game;StrategyGame;
  Version=1.0
 +Terminal=false
 +# vi: encoding=utf-8
