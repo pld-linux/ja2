@@ -1,19 +1,24 @@
+#
+# TODO:
+# - better workaround (try to avoid using config file to build)
+# - better handle of language
+#
 Summary:	Jagged Alliance 2 port
 Summary(pl.UTF-8):	Port gry Jagged Alliance 2
 Name:		ja2
-Version:	0.7
+Version:	0.8
 Release:	1
 License:	SFI
 Group:		Applications/Games
 Source0:	http://ja2.dragonriders.de/files/%{name}-%{version}-source.tar.bz2
-# Source0-md5:	c80b120c8f534f7d0fd1dce4ce5dbbd0
+# Source0-md5:	a9562d6b02cc632acbc0febd47374293
 Source1:	%{name}.png
 Patch0:		%{name}-config.patch
 Patch1:		%{name}-DESTDIR.patch
 Patch2:		%{name}-desktop.patch
+Patch3:		%{name}-linking.patch
 URL:		http://ja2.dragonriders.de/
 BuildRequires:	SDL-devel >= 1.2.0
-BuildRequires:	sed >= 4.0
 BuildRequires:	zlib-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -35,6 +40,7 @@ grać cały czas.
 %patch0 -p1
 %patch1 -p1
 %patch2 -p1
+%patch3 -p1
 %{__sed} -i 's@#CFLAGS += -g@CFLAGS += %{rpmcflags}@' config.template
 
 mv config.template config.default
@@ -43,7 +49,7 @@ mv config.template config.default
 %{__make} \
 	CC="%{__cc}" \
 	CXX="%{__cxx}" \
-	LIBS="-lSDL"
+	OPTFLAGS="%{rpmldflags}"
 
 %install
 rm -rf $RPM_BUILD_ROOT
