@@ -1,0 +1,10 @@
+--- ja2-0.8/Makefile~	2008-02-20 09:12:38.000000000 +0100
++++ ja2-0.8/Makefile	2008-04-02 20:49:36.593698284 +0200
+@@ -90,6 +90,7 @@
+ 
+ LDFLAGS += $(LDFLAGS_SDL)
+ LDFLAGS += -lm
++LDFLAGS += $(OPTFLAGS)
+ 
+ ifdef WITH_ZLIB
+ LDFLAGS += -lz
