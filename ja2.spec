@@ -19,6 +19,7 @@ Patch2:		%{name}-desktop.patch
 Patch3:		%{name}-linking.patch
 URL:		http://ja2.dragonriders.de/
 BuildRequires:	SDL-devel >= 1.2.0
+BuildRequires:	sed >= 4.0
 BuildRequires:	zlib-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -29,11 +30,10 @@ nonlinear gameplay, deep strategic battles and more-than-average
 detailed equipment do their best, to keep you playing on and on.
 
 %description -l pl.UTF-8
-Jagged Alliance 2 to turowa gra strategiczna, w której gracz
-wynajmuje najemników aby wyswobodzić kraj Arulco. Ponad 150
-rozmaitych postaci, nieliniowa rozgrywka, rozbudowane taktycznie bitwy
-oraz bardzo szczegółowo opisany ekwipunek sprawiają, że chce się
-grać cały czas.
+Jagged Alliance 2 to turowa gra strategiczna, w której gracz wynajmuje
+najemników aby wyswobodzić kraj Arulco. Ponad 150 rozmaitych postaci,
+nieliniowa rozgrywka, rozbudowane taktycznie bitwy oraz bardzo
+szczegółowo opisany ekwipunek sprawiają, że chce się grać cały czas.
 
 %prep
 %setup -q
@@ -41,7 +41,7 @@ grać cały czas.
 %patch1 -p1
 %patch2 -p1
 %patch3 -p1
-%{__sed} -i 's@#CFLAGS += -g@CFLAGS += %{rpmcflags}@' config.template
+%{__sed} -i -e 's@#CFLAGS += -g@CFLAGS += %{rpmcflags}@' config.template
 
 mv config.template config.default
 
